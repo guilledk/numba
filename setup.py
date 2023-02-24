@@ -20,7 +20,7 @@ except ImportError:
 
 
 min_python_version = "3.8"
-max_python_version = "3.11"  # exclusive
+max_python_version = "3.11.2"  # exclusive
 min_numpy_build_version = "1.11"
 min_numpy_run_version = "1.18"
 min_llvmlite_version = "0.40.0dev0"
@@ -371,7 +371,7 @@ packages = find_packages(include=["numba", "numba.*"])
 
 build_requires = ['numpy >={}'.format(min_numpy_build_version)]
 install_requires = [
-    'llvmlite >={},<{}'.format(min_llvmlite_version, max_llvmlite_version),
+    'llvmlite@git+https://github.com/guilledk/llvmlite.git@bump_min_version#llvmlite',
     'numpy >={}'.format(min_numpy_run_version),
     'setuptools',
     'importlib_metadata; python_version < "3.9"',
